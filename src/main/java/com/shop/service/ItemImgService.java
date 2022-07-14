@@ -41,7 +41,7 @@ public class ItemImgService {
     }
 
     public void updateItemImg(Long itemImgId, MultipartFile itemImgFile) throws Exception{
-        if(itemImgFile.isEmpty()){
+        if(!itemImgFile.isEmpty()){
             ItemImg savedItemImg = itemImgRepository.findById(itemImgId)
                     .orElseThrow(EntityNotFoundException::new);
             //기존 이미지 파일 삭제
